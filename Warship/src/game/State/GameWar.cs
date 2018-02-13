@@ -6,7 +6,6 @@ using System.Text;
 
 /*
 	NEED DO:
--		4: Поправить РЕНДЕР
 -		5: Проверка на убийство корабля
 	и.т.д 
 */
@@ -45,7 +44,6 @@ namespace Warship
 				{
 					NextState(game.FinishGame);
 				}
-
 			}
 		}
 

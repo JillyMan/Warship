@@ -11,10 +11,10 @@ namespace Warship
         {
             bool result = false;
 
-            if(d2.X >= d1.X - 5 && 
-                d2.X + d2.Width - 10 <= d1.X + d1.Width && 
-                d1.Y <= d2.Y + 5 && 
-                d2.Y + d2.Height - 5 <= d1.Y + d1.Height)
+            if(d2.X >= d1.X && 
+                d2.X + d2.Width <= d1.X + d1.Width && 
+                d1.Y <= d2.Y && 
+                d2.Y + d2.Height <= d1.Y + d1.Height)
             {
                 result = true;
             }

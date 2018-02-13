@@ -8,14 +8,23 @@ namespace Warship
 {
 	public class Button
 	{
-		public Dimension dimension { get; private set; }
-		public Font font { get; }
-		public string Info { get; }
+		private Font font { get; }
+		public readonly string text;
+		public bool Click { get; private set; }
+		public Dimension Size { get; private set; }
 
-		public Button(Dimension d, Font font)
+		public Button(Dimension size, Font font, string text)
 		{
-			this.dimension = d;
+			this.Size = size;
 			this.font = font;
+			this.text = text;
+			this.Click = false;
 		}
+
+		public void Render(Graphics g)
+		{
+			
+		}
+
 	}
 }

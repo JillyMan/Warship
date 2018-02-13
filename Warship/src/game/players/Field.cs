@@ -64,7 +64,6 @@ namespace Warship
 					if (helpCell.InRectangle(0, 0, Width, Height))
 					{
 						Cell newCell = Field[helpCell.Y, helpCell.X];
-
 						if(!cells.Contains(newCell))
 						{
 							cells.Add(newCell);

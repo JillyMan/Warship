@@ -16,7 +16,6 @@ namespace Warship
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Window("WarShip", 640, 300));
-
         }
     }
 }

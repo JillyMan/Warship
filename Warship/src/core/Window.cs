@@ -12,7 +12,6 @@ namespace Warship
     {
         private BufferedGraphicsContext context;
         private BufferedGraphics bufferedGraphics;
-		//private List<Layer> layers = new List<Layer>();
 		private Game game;
 
         public Window(String name, int width, int height)
@@ -28,26 +27,24 @@ namespace Warship
 			int[] len = new int[] { 4, 3, 3, 2, 2, 2, 1, 1, 1, 1 };
 
 			game = new Game("Player", i1, "Bot ", i2, len);
-			InitializeComponent();
 			Start();
         }
 
-        #region Init
         private void InitializeComponent()
-        {
-//            this.SetVisibleCore(true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
+		{
+			this.SetVisibleCore(true); 
+
+			this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MouseDown += Window_MouseDown;
             this.MouseUp += Window_MouseUp;
             this.MouseMove += Window_MouseMove;
             this.Resize += Window_Resize;
-			//.Icon = new Icon("icon.bmp");
 
             this.ClientSize = new System.Drawing.Size(this.Width, this.Height);
             this.Name = "Window";
             this.ResumeLayout(false);
 
-            context = BufferedGraphicsManager.Current;
+			context = BufferedGraphicsManager.Current;
             context.MaximumBuffer = new Size(this.Width + 1, this.Height + 1);
         }
 
@@ -62,10 +59,10 @@ namespace Warship
             bufferedGraphics = context.Allocate(this.CreateGraphics(), new Rectangle(0, 0, this.Width, this.Height));
             this.Refresh();
         }
-        #endregion
 
         private void Start()
         {
+			InitializeComponent();
 			new Thread(() =>
 				{
 					while(true)
@@ -87,7 +84,6 @@ namespace Warship
         {
 			game.OnEvent(e);
         }
-
 
         private void Window_MouseUp(object sender, MouseEventArgs e)
         {
@@ -112,7 +108,7 @@ namespace Warship
 /*
 private void InitializeComponent()
 {
-    this.SetVisibleCore(true);
+    this.SetVisibleCore(true);  
     this.Resize += Window_Resize;
     this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
     this.MouseDown += Window_MouseDown;

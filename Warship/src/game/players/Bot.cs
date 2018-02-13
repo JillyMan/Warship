@@ -9,11 +9,10 @@ namespace Warship
 {
 	public class Bot : Player
 	{
-		private Random r;
+		private Random r = new Random();
 
 		public Bot(string name, int[] LenShip) : base(name)
 		{
-			r = new Random();
 			CreateShip(LenShip);
 		}
 
@@ -23,11 +22,13 @@ namespace Warship
 			{
 				g.FillRectangle(Brushes.Yellow, rect);
 			}
-			//else if (Field[i, j].Type == TypeSurface.SHIP)
-			//{
-			//	g.FillRectangle(Brushes.LightGray, rect);
-			//}
-			else if(Field[i, j].Type == TypeSurface.WOUNDSHIP)
+#if false
+			else if (Field[i, j].Type == TypeSurface.SHIP)
+			{
+				g.FillRectangle(Brushes.LightGray, rect);
+			}
+#endif
+			else if (Field[i, j].Type == TypeSurface.WOUNDSHIP)
 			{
 				g.FillRectangle(Brushes.Red, rect);
 			}

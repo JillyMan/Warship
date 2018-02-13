@@ -13,7 +13,7 @@ namespace Warship
 
 	static class FabricShips
 	{
-		public static Ship GetShip(int size, ShipType type, int shiftX, int shiftY)
+		public static Ship GetShip(int size, ShipType type, int offsetX, int offsetY)
 		{
 			List<Cell> cells = new List<Cell>(size);
 
@@ -23,7 +23,7 @@ namespace Warship
 				{
 					for (int i = 0; i < size; i++)
 					{
-						cells.Add(new Cell(i + shiftX, shiftY, TypeSurface.SHIP));
+						cells.Add(new Cell(i + offsetX, offsetY, TypeSurface.SHIP));
 					}
 				}
 				break;
@@ -31,7 +31,7 @@ namespace Warship
 				{
 					for (int i = 0; i < size; i++)
 					{
-						cells.Add(new Cell(shiftX, i + shiftY, TypeSurface.SHIP));
+						cells.Add(new Cell(offsetX, i + offsetY, TypeSurface.SHIP));
 					}
 				}
 				break;
